@@ -178,8 +178,8 @@ def pew():
     lc = '^'
     temp = ptn
     ptn = 0
-    check_ptn()
-    ptn_var.set(ptn)
+    
+    
 
 def cs():
     global ptn
@@ -226,6 +226,10 @@ def mminus():
     global ptn
     mem -= float(ptn)
 
+def qt():
+    if messagebox.askyesnocancel('Quit Application?', 'Are you sure you want to close the application?') == True:
+        window.destroy()
+
 
 window = Tk()
 window.geometry('1250x800')
@@ -241,93 +245,97 @@ lc = ''
 temp = 0
 mem = 0
 txts = 'Arial 15'
+btd = 130
 
 Clear = Button(window, text='C', width=10, height=5, command=cls, font=txts)
 Clear.place(x=cx, y=cy, anchor='center')
 
 AC = Button(window, text='AC', width=10, height=5, command=clearance, font=txts)
-AC.place(x=cx-150, y=cy, anchor='center')
+AC.place(x=cx-btd, y=cy, anchor='center')
 
 pw = Button(window, text='^', width=10, height=5, command=pew, font=txts)
-pw.place(x=cx-150, y=cy+100, anchor='center')
+pw.place(x=cx-btd, y=cy+100, anchor='center')
 
 Sin = Button(window, text='sin', width=10, height=5, command=cs, font=txts)
-Sin.place(x=cx-150, y=cy+200, anchor='center')
+Sin.place(x=cx-btd, y=cy+200, anchor='center')
 
 Cos = Button(window, text='cos', width=10, height=5, command=cc, font=txts)
-Cos.place(x=cx-150, y=cy+300, anchor='center')
+Cos.place(x=cx-btd, y=cy+300, anchor='center')
 
 Tan = Button(window, text='tan', width=10, height=5, command=ct, font=txts)
-Tan.place(x=cx-150, y=cy+400, anchor='center')
+Tan.place(x=cx-btd, y=cy+400, anchor='center')
 
 roundd = Button(window, text='round', width=10, height=5, command=rd, font=txts)
-roundd.place(x=cx-300, y=cy, anchor='center')
+roundd.place(x=cx-2*btd, y=cy, anchor='center')
 
 m = Button(window, text='M', width=10, height=5, command=mcall, font=txts)
-m.place(x=cx-300, y=cy+100, anchor='center')
+m.place(x=cx-2*btd, y=cy+100, anchor='center')
 
 mc = Button(window, text='MC', width=10, height=5, command=mclear, font=txts)
-mc.place(x=cx-300, y=cy+200, anchor='center')
+mc.place(x=cx-2*btd, y=cy+200, anchor='center')
 
 mp = Button(window, text='M+', width=10, height=5, command=mplus, font=txts)
-mp.place(x=cx-300, y=cy+300, anchor='center')
+mp.place(x=cx-2*btd, y=cy+300, anchor='center')
 
 mm = Button(window, text='M-', width=10, height=5, command=mminus, font=txts)
-mm.place(x=cx-300, y=cy+400, anchor='center')
+mm.place(x=cx-2*btd, y=cy+400, anchor='center')
 
 one = Button(window, text='1', width=10, height=5, command=n1, font=txts)
 one.place(x=cx, y=cy+300, anchor='center')
 
 two = Button(window, text='2', width=10, height=5, command=n2, font=txts)
-two.place(x=cx+150, y=cy+300, anchor='center')
+two.place(x=cx+btd, y=cy+300, anchor='center')
 
 three = Button(window, text='3', width=10, height=5, command=n3, font=txts)
-three.place(x=cx+300, y=cy+300, anchor='center')
+three.place(x=cx+2*btd, y=cy+300, anchor='center')
 
 four = Button(window, text='4', width=10, height=5, command=n4, font=txts)
 four.place(x=cx, y=cy+200, anchor='center')
 
 five = Button(window, text='5', width=10, height=5, command=n5, font=txts)
-five.place(x=cx+150, y=cy+200, anchor='center')
+five.place(x=cx+btd, y=cy+200, anchor='center')
 
 six = Button(window, text='6', width=10, height=5, command=n6, font=txts)
-six.place(x=cx+300, y=cy+200, anchor='center')
+six.place(x=cx+2*btd, y=cy+200, anchor='center')
 
 seven = Button(window, text='7', width=10, height=5, command=n7, font=txts)
 seven.place(x=cx, y=cy+100, anchor='center')
 
 eight = Button(window, text='8', width=10, height=5, command=n8, font=txts)
-eight.place(x=cx+150, y=cy+100, anchor='center')
+eight.place(x=cx+btd, y=cy+100, anchor='center')
 
 nine = Button(window, text='9', width=10, height=5, command=n9, font=txts)
-nine.place(x=cx+300, y=cy+100, anchor='center')
+nine.place(x=cx+2*btd, y=cy+100, anchor='center')
 
 zero = Button(window, text='0', width=26, height=5, command=n0, font=txts)
-zero.place(x=cx+75, y=cy+400, anchor='center')
+zero.place(x=cx+67, y=cy+400, anchor='center')
 
 dot = Button(window, text='.', width=10, height=5, command=nd, font=txts)
-dot.place(x=cx+300, y=cy+400, anchor='center')
+dot.place(x=cx+2*btd, y=cy+400, anchor='center')
 
 divide = Button(window, text='÷', width=10, height=5, command=divd, font=txts)
-divide.place(x=cx+450, y=cy, anchor='center')
+divide.place(x=cx+3*btd, y=cy, anchor='center')
 
 multiply = Button(window, text='x', width=10, height=5, command=mult, font=txts)
-multiply.place(x=cx+450, y=cy+100, anchor='center')
+multiply.place(x=cx+3*btd, y=cy+100, anchor='center')
 
 sub = Button(window, text='-', width=10, height=5, command=sb, font=txts)
-sub.place(x=cx+450, y=cy+200, anchor='center')
+sub.place(x=cx+3*btd, y=cy+200, anchor='center')
 
 add = Button(window, text='+', width=10, height=5, command=ad, font=txts)
-add.place(x=cx+450, y=cy+300, anchor='center')
+add.place(x=cx+3*btd, y=cy+300, anchor='center')
 
 equal = Button(window, text='=', width=10, height=5, command=equ, font=txts)
-equal.place(x=cx+450, y=cy+400, anchor='center')
+equal.place(x=cx+3*btd, y=cy+400, anchor='center')
 
 percent = Button(window, text='%', width=10, height=5, command=pc, font=txts)
-percent.place(x=cx+300, y=cy, anchor='center')
+percent.place(x=cx+2*btd, y=cy, anchor='center')
 
 neg = Button(window, text='+/-', width=10, height=5, command=negt, font=txts)
-neg.place(x=cx+150, y=cy, anchor='center')
+neg.place(x=cx+btd, y=cy, anchor='center')
+
+qui = Button(window, text='Quit', width=10, height=5, command=qt, font=txts)
+qui.place(x=1180, y=715, anchor='center')
 
 ptn_var = StringVar()
 ptn_var.set(ptn) 
