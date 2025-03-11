@@ -12,6 +12,14 @@ def enter_calculator():
     pt = str(p1) + ' + ' + str(p2) + ' = ' + str(p1+p2)
     messagebox.showinfo('Calculator.io', pt)
 
+def check_ptn():
+    global ptn
+    if len(ptn) != 1 and ptn[0] != 0:
+        if ptn[0] == '0':
+            ptn = ptn[1:]
+        if ptn[len(ptn)-2] == '.' and ptn[len(ptn)-1] == '0':
+            ptn = ptn[:-2]
+
 def cls():
     global ptn
     ptn = 0
@@ -29,66 +37,79 @@ def clearance():
 def n1():
     global ptn
     ptn =str(ptn)+'1'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n2():
     global ptn
     ptn =str(ptn)+'2'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n3():
     global ptn
     ptn =str(ptn)+'3'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n4():
     global ptn
     ptn =str(ptn)+'4'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n5():
     global ptn
     ptn =str(ptn)+'5'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n6():
     global ptn
     ptn =str(ptn)+'6'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n7():
     global ptn
     ptn =str(ptn)+'7'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n8():
     global ptn
     ptn =str(ptn)+'8'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n9():
     global ptn
     ptn =str(ptn)+'9'
+    check_ptn()
     ptn_var.set(ptn)
 
 def n0():
     global ptn
     ptn =str(ptn)+'0'
+    check_ptn()
     ptn_var.set(ptn)
 
 def nd():
     global ptn
     ptn =str(ptn)+'.'
+    check_ptn()
     ptn_var.set(ptn)
 
 def negt():
     global ptn
     ptn ='-'+str(ptn)
+    check_ptn()
     ptn_var.set(ptn)
 
 def pc():
     global ptn
     ptn = str(float(ptn)/100.0)
+    check_ptn()
     ptn_var.set(ptn)
 
 def equ():
@@ -103,6 +124,8 @@ def equ():
         ptn = float(temp) / float(ptn)
     elif lc == '^':
         ptn = pow(float(temp), float(ptn))
+    ptn = str(ptn)
+    check_ptn()
     ptn_var.set(ptn)
 
 def ad():
@@ -154,32 +177,38 @@ def pew():
     lc = '^'
     temp = ptn
     ptn = 0
+    check_ptn()
     ptn_var.set(ptn)
 
 def cs():
     global ptn
     ptn = str(round(math.sin(math.radians(float(ptn))),10))
+    check_ptn()
     ptn_var.set(ptn)
 
 def cc():
     global ptn
     ptn = str(round(math.cos(math.radians(float(ptn))),10))
+    check_ptn()
     ptn_var.set(ptn)
 
 def ct():
     global ptn
     ptn = str(round(math.tan(math.radians(float(ptn))),10))
+    check_ptn()
     ptn_var.set(ptn)
 
 def rd():
     global ptn
     ptn = str(round(float(ptn), 3))
+    check_ptn()
     ptn_var.set(ptn)
 
 def mcall():
     global mem
     global ptn
     ptn = mem
+    check_ptn()
     ptn_var.set(ptn)
 
 def mclear():
