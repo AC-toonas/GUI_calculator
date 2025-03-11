@@ -14,11 +14,15 @@ def enter_calculator():
 
 def check_ptn():
     global ptn
-    if len(ptn) != 1 and ptn[0] != 0:
-        if ptn[0] == '0':
-            ptn = ptn[1:]
-        if ptn[len(ptn)-2] == '.' and ptn[len(ptn)-1] == '0':
-            ptn = ptn[:-2]
+    if len(ptn) != 1:
+        if (('.' in ptn) == False):
+            if (ptn[0] == '0'):
+                ptn = ptn[1:]
+        else:
+            if ptn[len(ptn)-1] == '0':
+                ptn = ptn[:-1]
+                if ptn[len(ptn)-1] == '.':
+                    ptn = ptn[:-1]
 
 def cls():
     global ptn
@@ -136,7 +140,6 @@ def ad():
     lc = '+'
     temp = ptn
     ptn = 0
-    ptn_var.set(ptn)
 
 def sb():
     global ptn
@@ -146,7 +149,6 @@ def sb():
     lc = '-'
     temp = ptn
     ptn = 0
-    ptn_var.set(ptn)
 
 def mult():
     global ptn
@@ -156,7 +158,7 @@ def mult():
     lc = '*'
     temp = ptn
     ptn = 0
-    ptn_var.set(ptn)
+
 
 def divd():
     global ptn
@@ -166,7 +168,6 @@ def divd():
     lc = '/'
     temp = ptn
     ptn = 0
-    ptn_var.set(ptn)
 
 
 def pew():
